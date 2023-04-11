@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
+const val EXTRA_MENSAGEM = "mensagem"
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,8 +22,13 @@ class MainActivity : AppCompatActivity() {
         val editTextMensagem = findViewById<EditText>(R.id.editTextMensagem)
         val mensagem = editTextMensagem.text.toString()
 
+        if (mensagem.isBlank()) {
+            editTextMensagem.error = "A mensagem não pode ser vazia"
+            editTextMensagem.requestFocus()
+        }
+
         val intent = Intent(this,MostraMensagemActivity::class.java)
-        intent.putExtra("mensagem",mensagem)
+        intent.putExtra(EXTRA_MENSAGEM,mensagem)
 
         startActivity(intent)
     }

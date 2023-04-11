@@ -9,7 +9,7 @@ class MostraMensagemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostra_mensagem)
 
-        val mensagem = intent.getStringExtra("mensagem")
+        val mensagem = intent.getStringExtra(EXTRA_MENSAGEM)
 
         val textViewMensagem = findViewById<TextView>(R.id.textView2)
         textViewMensagem.text = mensagem

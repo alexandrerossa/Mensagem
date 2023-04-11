@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Mensagem</string>
-    <string name="enviar">Enviar</string>
     <string name="name">Name</string>
     <string name="textview">TextView</string>
-    <string name="mensagem_recebida">Mensagem Recebida:</string>
+    <string name="mensagem_recebida">Mensagem Received</string>
+    <string name="enviar">Send</string>
 </resources>
