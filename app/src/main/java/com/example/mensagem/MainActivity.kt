@@ -1,8 +1,10 @@
 package com.example.mensagem
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +18,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun enviaMensagem() {
         Toast.makeText(this,"enviar mensagem", Toast.LENGTH_SHORT).show()
+        val editTextMensagem = findViewById<EditText>(R.id.editTextMensagem)
+        val mensagem = editTextMensagem.text.toString()
 
+        val intent = Intent(this,MostraMensagemActivity::class.java)
+        intent.putExtra("mensagem",mensagem)
+
+        startActivity(intent)
     }
 }
